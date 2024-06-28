@@ -12,14 +12,13 @@ if __name__ == "__main__":
     TODO_URL = "https://jsonplaceholder.typicode.com/users/{}/todos".format(num)
     res = requests.get(TODO_URL)
     todos = json.loads(res.text)
-
-    done=[]
-
-for todo in todo_response:
-    i=0
-    if todo['completed']:
-          done.append(i)
-    print("Employee {} is done with tasks({}/{}):".format(
-                                                          USER['name'],
+done = []
+for i in todos:
+        if i['completed']:
+            done.append(i)
+print("Employee {} is done with tasks({}/{}):".format(
+                                                          user['name'],
                                                           len(done),
-                                                          len(todo)))
+                                                          len(todos)))
+for i in done:
+        print("\t {}".format(i["title"]))
