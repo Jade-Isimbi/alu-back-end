@@ -2,7 +2,7 @@
 """Display todo list progress"""
 
 import json
-import requestsgit 
+import requests
 import sys
 if __name__ == "__main__":
     USER_URL = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
